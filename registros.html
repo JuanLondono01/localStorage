@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registros</title>
+        <link rel="stylesheet" href="./css/registros.css" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://kit.fontawesome.com/499df900a3.js" crossorigin="anonymous"></script>
+        <script defer src="./js/users.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <button id="newUserButton" class="new-user-button">
+                New User
+                <i class="fa-solid fa-user" style="color: #ffffff"></i>
+            </button>
+            <a href="search.html" id="searchButton" class="search-button">
+                Search
+                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff"></i>
+            </a>
+            <button id="logoutButton" class="logout-button">
+                Salir
+                <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ffffff"></i>
+            </button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Picture</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Post</th>
+                        <th>Start Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="userTable"></tbody>
+            </table>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2>Registro de Usuario</h2>
+                <form id="formData">
+                    <input type="text" id="doc" placeholder="Documento" required />
+                    <br />
+                    <input type="text" id="name" placeholder="Nombre" required />
+                    <br />
+                    <input type="number" id="age" placeholder="Edad" required />
+                    <br />
+                    <input type="file" id="photoInput" accept="image/*" required />
+                    <br />
+                    <input type="text" id="city" placeholder="Ciudad" required />
+                    <br />
+                    <input type="email" id="email" placeholder="Email" required />
+                    <br />
+                    <input type="tel" id="phone" placeholder="Celular" required />
+                    <br />
+                    <input type="date" id="startDate" placeholder="Fecha de inicio" required />
+                    <br />
+                    <button type="button" onclick="registromod()" class="buttonCreate" id="guardar">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
