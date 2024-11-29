@@ -39,9 +39,15 @@ const iniciarSesion = () => {
 
     // Verificar si los datos coinciden
     if (storedUser && storedUser.correo === correo && storedUser.contrasena === contrasena) {
-        alert(`Bienvenido, ${storedUser.Nombre}!`);
+        swal.fire({
+            title: `Bienvenido, ${storedUser.Nombre}`,
+            timer: 700,
+            showConfirmButton: false
+        })
+        setTimeout(() => {
+            window.location.href = 'registros.html';
+        }, 1000);
         // Redirigir a la página de registros
-        window.location.href = 'registros.html';
     } else {
         alert('Correo o contraseña incorrectos.');
     }

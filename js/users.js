@@ -3,8 +3,14 @@ const newUserButton = document.getElementById('newUserButton');
 const closeModal = document.getElementById('closeModal');
 
 document.getElementById('logoutButton').addEventListener('click', () => {
-    alert('Cerrando sesión...');
-    window.location.href = './index.html';
+    swal.fire({
+        title: `Hasta pronto`,
+        timer: 700,
+        showConfirmButton: false
+    });
+    setTimeout(() => {
+        window.location.href = './index.html';
+    }, 700);
 });
 
 // Abrir modal al hacer clic en el botón
@@ -89,7 +95,9 @@ const loadTable = () => {
 
         row.innerHTML = `
             <td>${index + 1}</td>
-            <td><img src="${user.imagen}" alt="User Picture" style="width:50px;height:50px;object-fit:cover;"></td>
+            <td><img src="${
+                user.imagen
+            }" alt="User Picture" style="width:50px;height:50px;object-fit:cover;"></td>
             <td>${user.nombre}</td>
             <td>${user.edad}</td>
             <td>${user.ciudad}</td>
@@ -98,10 +106,14 @@ const loadTable = () => {
             <td>${user.documento}</td>
             <td>${user.fecha}</td>
             <td class="actions">
-                <button onclick="deleteUser('${user.documento}')" title="Delete" class="action-btn">
+                <button onclick="deleteUser('${
+                    user.documento
+                }')" title="Delete" class="action-btn">
                     <i class="fa-solid fa-trash" style="color: red;"></i>
                 </button>
-                <button onclick="updateUser('${user.documento}')" title="Update" class="action-btn">
+                <button onclick="updateUser('${
+                    user.documento
+                }')" title="Update" class="action-btn">
                     <i class="fa-solid fa-pen-to-square" style="color: #74C0FC;"></i>
                 </button>
             </td>
@@ -125,7 +137,7 @@ const deleteUser = (index) => {
                 title: 'Registro eliminado',
                 icon: 'success',
                 timer: 1000,
-                showConfirmButton: false
+                showConfirmButton: false,
             });
             localStorage.removeItem(index);
             loadTable();
