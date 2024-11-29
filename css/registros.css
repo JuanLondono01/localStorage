@@ -181,6 +181,17 @@ form button:hover {
     flex-grow: 2;
 }
 
+#user-name{
+    position: absolute; 
+    top: 1rem;
+    right: 5.5rem;
+    border: 1px solid skyblue;
+    border-radius: 6px;
+    padding: .5rem;
+    padding-inline: 2rem;
+    font-weight: bold;
+}
+
 @media (max-width: 600px) {
     .modal-content {
         width: 95%;

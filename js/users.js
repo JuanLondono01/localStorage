@@ -1,6 +1,7 @@
 const modal = document.getElementById('modal');
 const newUserButton = document.getElementById('newUserButton');
 const closeModal = document.getElementById('closeModal');
+const userName = document.getElementById("user-name")
 
 document.getElementById('logoutButton').addEventListener('click', () => {
     swal.fire({
@@ -12,6 +13,9 @@ document.getElementById('logoutButton').addEventListener('click', () => {
         window.location.href = './index.html';
     }, 700);
 });
+
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    userName.textContent = storedUser.Nombre
 
 // Abrir modal al hacer clic en el botón
 newUserButton.addEventListener('click', function () {
